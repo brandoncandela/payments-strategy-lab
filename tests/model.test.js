@@ -1,0 +1,8 @@
+import test from 'node:test';import assert from 'node:assert/strict';import {defaults,policies,calculate,compare,validate} from '../dist/model.js';
+test('zero fraud produces zero fraud losses',()=>{for(const p of policies)assert.equal(calculate({...defaults,fraud:0},p).loss,0);});
+test('cash bridge reconciles',()=>{for(const r of compare(defaults))assert.ok(Math.abs(r.contribution-(r.revenue-r.loss-r.labor-r.processing-r.tech))<1e-8);});
+test('capacity constrains reviews and recovered approvals',()=>{const p=policies[1],small=calculate({...defaults,staff:1},p),large=calculate({...defaults,staff:200},p);assert.ok(small.overflow>0);assert.equal(large.coverage,1);assert.equal(large.overflow,0);assert.ok(large.legitApproved>small.legitApproved);});
+test('spare staff cost money without increasing approvals',()=>{const a=calculate({...defaults,staff:199},policies[0]),b=calculate({...defaults,staff:200},policies[0]);assert.equal(a.legitApproved,b.legitApproved);assert.ok(Math.abs(a.contribution-b.contribution-5500)<1e-8);});
+test('policy mass and population bounds',()=>{for(const p of policies){assert.ok(p.legitAuto+p.legitReview<=1);assert.ok(p.fraudAuto+p.fraudReview<=1);const r=calculate(defaults,p);assert.ok(r.legitApproved<=990000);assert.ok(r.fraudApproved<=10000);}});
+test('invalid inputs rejected',()=>{for(const x of [{...defaults,fraud:NaN},{...defaults,volume:0},{...defaults,staff:1.5},{...defaults,margin:-1}])assert.throws(()=>validate(x));});
+test('independently calculated reference case',()=>{const r=calculate(defaults,policies[0]);assert.equal(r.reviewDemand,8720);assert.equal(r.coverage,1);assert.ok(Math.abs(r.legitApproved-907632)<1e-6);assert.ok(Math.abs(r.fraudApproved-316)<1e-6);assert.ok(Math.abs(r.contribution-464660.48)<1e-6);});
