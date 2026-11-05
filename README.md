@@ -6,7 +6,7 @@
 
 > **What this shows:** Payments unit economics, fraud-loss vs. approval-rate tradeoffs, review-team capacity planning and a decision memo, backed by a tested model.
 
-**A consulting case about profitable growth, fraud exposure and operational capacity.** Built by [Brandon Candela](https://brandoncandela.github.io/) with AI-assisted development.
+**A consulting case about profitable growth, fraud exposure and operational capacity.** Built by [Brandon Candela](https://brandoncandela.github.io/).
 
 A fictional payments company wants to approve more legitimate purchases. Compare three strategies, change business assumptions, inspect the economics and write a recommendation for a 90-day pilot.
 
@@ -34,7 +34,7 @@ This complements my SQL Financial Crime Lab by moving from transaction monitorin
 
 Run tests with `node --test tests/model.test.js` (modern Node.js). No external packages required.
 
-## Scope
-Independent educational work sample. All inputs and policy rates are fictional, not market benchmarks, proprietary logic or a real client engagement. This is not a trained fraud model. Contribution excludes corporate overhead, tax, capital, acquisition costs and long-term customer value. Review overflow is declined. Notes remain in memory until the page closes; download the memo to keep them.
+## Limits
+The company, inputs and policy rates are made up for the exercise; they are not market benchmarks or a real client's numbers. Contribution leaves out corporate overhead, tax, capital, acquisition costs and long-term customer value. Payments the review team has no time for are declined. Notes stay in the page until you close it, so download the memo to keep them.
 
-No affiliation with the firms discussed as career targets. The work sample demonstrates the analysis itself; it does not claim production consulting experience.
+Built with AI coding tools.

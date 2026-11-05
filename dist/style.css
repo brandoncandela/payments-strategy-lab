@@ -5,3 +5,17 @@
 @media print{header,.controls,.actions,footer,button{display:none}.workspace,.analysis-grid,.intro{display:block}.cards{display:flex}.cards article{flex:1}.panel,.detail{break-inside:avoid}body{background:white}main{padding:0}}
 /* Impeccable refinement: a decision model, not a generic dashboard. */
 ::selection{background:#b7ddd6;color:#092a27}*{scrollbar-color:#899bab #e2e8ed}h1,h2,h3{text-wrap:balance}p,li{text-wrap:pretty}.intro{box-shadow:none;border-color:#c4d0da}.intro h1{max-width:18ch;line-height:1.04;letter-spacing:-.03em}button{min-height:44px}.cards article{border-color:#c5d0da}.cards article.selected{box-shadow:none;border-color:#08786b;background:#edf8f5}.panel,.detail{border-color:#c5d0da}summary{display:flex;min-height:44px;align-items:center}@media(prefers-reduced-motion:reduce){a,button,input,textarea,select{transition:none!important}}
+
+/* Motion (classes are added by motion.js, so the page is fully visible without JavaScript) */
+.mo { opacity: 0; transform: translateY(16px); transition: opacity .6s ease, transform .6s ease; }
+.mo.mo-in { opacity: 1; transform: none; }
+.mo-stagger > * { animation: mo-rise .45s ease both; animation-delay: calc(var(--i, 0) * 70ms); }
+@keyframes mo-rise { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+button { transition: background-color .2s, border-color .2s, color .2s, box-shadow .2s, transform .12s; }
+button:active:not(:disabled) { transform: translateY(1px); }
+tbody tr { transition: background-color .2s; }
+@media (prefers-reduced-motion: reduce) {
+  .mo { opacity: 1; transform: none; transition: none; }
+  .mo-stagger > * { animation: none; }
+  button, tbody tr { transition: none; }
+}
