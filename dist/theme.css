@@ -1,0 +1,57 @@
+/* White and blue portfolio look for this lab, with a royal blue accent. Loaded after style.css and apple.css. */
+:root {
+  --ink: #1d1d1f; --muted: #55555d; --line: rgb(29 29 31 / .09); --teal: #2563eb; --paper: #fbfcff;
+  --blue: #2563eb; --red: #c4302b; --surface: rgb(255 255 255 / .74);
+  --glass-shadow: 0 1px 0 rgb(255 255 255 / .8) inset, 0 12px 32px rgb(30 58 138 / .07);
+}
+html, body { background: var(--paper); }
+body { font-family: "Inter", system-ui, sans-serif; }
+
+header { background: rgb(251 252 255 / .72); color: var(--ink); border-bottom: 1px solid var(--line); backdrop-filter: blur(18px) saturate(150%); -webkit-backdrop-filter: blur(18px) saturate(150%); position: sticky; top: 0; z-index: 20; letter-spacing: 0; font-size: 13px; }
+header > span { color: var(--muted); }
+.brand { letter-spacing: -.02em; }
+.brand span { color: var(--teal); }
+
+.intro, .cards article, .detail, .panel, .controls {
+  background: var(--surface); border: 1px solid rgb(255 255 255 / .7); border-radius: 18px;
+  box-shadow: var(--glass-shadow); backdrop-filter: blur(18px) saturate(150%); -webkit-backdrop-filter: blur(18px) saturate(150%);
+}
+.intro { grid-template-columns: minmax(0, 1.6fr) minmax(280px, 1fr); align-items: center; }
+.intro h1 { letter-spacing: -.035em; font-weight: 800; }
+.intro h1 em { color: inherit; }
+.intro aside { border-left: 0; padding-left: 0; display: grid; gap: 10px; }
+.intro aside .ap-art { margin-bottom: 6px; }
+.impact-strip { border-color: var(--line); }
+.impact-strip b { color: var(--teal); }
+.eyebrow, .pill { color: var(--teal); }
+.tag { border: 0; border-radius: 999px; background: rgb(37 99 235 / .08); color: #1e40af; padding: 4px 10px; }
+
+/* Dark sidebar becomes a frosted card */
+.controls { color: var(--ink); }
+.controls h2 { color: var(--ink); }
+.controls p, .controls label { color: var(--muted); }
+.controls button { background: rgb(29 29 31 / .06); border: 0; color: var(--ink); border-radius: 999px; }
+.controls button:hover { background: rgb(29 29 31 / .1); }
+input, textarea { border: 1px solid rgb(29 29 31 / .14); border-radius: 10px; }
+button { border-radius: 999px; border: 0; background: rgb(29 29 31 / .06); font-weight: 600; transition: background .2s, transform .15s; }
+button:hover { background: rgb(29 29 31 / .1); }
+.primary { background: #1d1d1f; color: #fff; }
+.primary:hover { background: #000; transform: translateY(-1px); }
+#error { color: var(--red); }
+
+.cards article.selected { background: rgb(37 99 235 / .07); border-color: rgb(37 99 235 / .25); box-shadow: inset 0 3px 0 var(--teal), var(--glass-shadow); }
+.value { letter-spacing: -.03em; font-weight: 800; }
+.positive { color: #2f7d4f; }
+.bar { border-radius: 99px; background: rgb(29 29 31 / .07); }
+.bar i { border-radius: 99px; background: linear-gradient(90deg, #5aa9ff, #2563eb); }
+.bar.cost i { background: linear-gradient(90deg, #f08a85, #c4302b); }
+th { background: transparent; color: #86868b; font-weight: 500; }
+.matrix td.best { background: rgb(37 99 235 / .09); }
+.callout { background: rgb(37 99 235 / .06); border: 0; border-radius: 14px; }
+.warning { border-radius: 14px; border: 0; }
+pre { background: #f5f8ff; color: #1e3a8a; border-radius: 14px; }
+footer { color: #86868b; }
+
+@media (max-width: 900px) {
+  .intro { grid-template-columns: minmax(0, 1fr); }
+}
