@@ -2,7 +2,7 @@
 
 ![Payments Strategy Lab](docs/social-preview.jpg)
 
-**[▶ Open the live demo](https://brandoncandela.github.io/payments-strategy-lab/)** · [Portfolio](https://brandoncandela.github.io/) · [LinkedIn](https://www.linkedin.com/in/brandon-candela/) · Built by Brandon Candela, CAMS
+**[▶ Open the live demo](https://brandoncandela.github.io/payments-strategy-lab/)** · [Technical case study](https://brandoncandela.github.io/case-studies/payments-strategy-lab.html) · [Portfolio](https://brandoncandela.github.io/) · [LinkedIn](https://www.linkedin.com/in/brandon-candela/) · Built by Brandon Candela, CAMS
 
 > **What this shows:** Payments unit economics, fraud-loss vs. approval-rate tradeoffs, review-team capacity planning and a decision memo, backed by a tested model.
 
