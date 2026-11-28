@@ -1,5 +1,7 @@
 # Payments Strategy Lab
 
+[![CI](https://github.com/brandoncandela/payments-strategy-lab/actions/workflows/ci.yml/badge.svg)](https://github.com/brandoncandela/payments-strategy-lab/actions/workflows/ci.yml)
+
 ![Payments Strategy Lab](docs/social-preview.jpg)
 
 **[▶ Open the live demo](https://brandoncandela.github.io/payments-strategy-lab/)** · [Technical case study](https://brandoncandela.github.io/case-studies/payments-strategy-lab.html) · [Portfolio](https://brandoncandela.github.io/) · [LinkedIn](https://www.linkedin.com/in/brandon-candela/) · Built by Brandon Candela, CAMS
